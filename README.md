@@ -33,14 +33,3 @@ Unlocking the bootloader will **wipe all internal data** (Factory Reset). Please
 ```bash
 pkg update && pkg upgrade -y
 pkg install android-tools python git openssl libusb -y
-pip install unisoc-unlock
-fastboot devices
-fastboot flashing unlock
-python -m unisoc_unlock unlock
-fastboot oem get_identifier_token
-📱 Step 5: Confirm on Phone Screen (e.g., POCO C71)
-Look at your phone (like POCO C71) screen.
-A confirmation warning will appear asking whether you want to unlock the bootloader.
-Press the Volume Down button (or the button displayed on your screen) to select and confirm Unlock.
-The device will automatically wipe all data (factory reset) and reboot with an unlocked bootloader.
-
