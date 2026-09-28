@@ -27,26 +27,20 @@ Unlocking the bootloader will **wipe all internal data** (Factory Reset). Please
 
 ---
 
-## 🚀 Step 2: All Termux & Fastboot Unlock Commands
+## 📦 Step 2: Install Packages (Host Phone)
 
-Connect the OTG adapter to your Host phone and plug the USB cable into the target phone (in Fastboot mode). Then run the commands below:
-
+### 1. Update Packages & Dependencies
 ```bash
-# 1. Update packages & install dependencies
 pkg update && pkg upgrade -y
 pkg install android-tools python git openssl libusb -y
-
-# 2. Install Unisoc unlock utility
 pip install unisoc-unlock
-
-# 3. Check fastboot connection
 fastboot devices
-
-# 4. Method A: Direct Fastboot Unlock
 fastboot flashing unlock
-
-# 5. Method B: Automated Unisoc Unlock Utility (if direct unlock fails)
 python -m unisoc_unlock unlock
-
-# 6. Method C: Get Device Identifier Token Manually (Optional)
 fastboot oem get_identifier_token
+📱 Step 5: Confirm on Phone Screen (e.g., POCO C71)
+Look at your phone (like POCO C71) screen.
+A confirmation warning will appear asking whether you want to unlock the bootloader.
+Press the Volume Down button (or the button displayed on your screen) to select and confirm Unlock.
+The device will automatically wipe all data (factory reset) and reboot with an unlocked bootloader.
+
